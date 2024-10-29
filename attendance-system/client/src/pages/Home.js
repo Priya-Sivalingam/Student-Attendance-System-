@@ -1,20 +1,13 @@
-// client/src/pages/Home.js
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { logout } from '../services/authService';
+import Header from '../components/header';
 
 function Home() {
-    const navigate = useNavigate();
-
-    const handleLogout = () => {
-        logout();
-        navigate('/login');
-    };
-
     return (
         <div>
-            <h2>Welcome to the Home Page!</h2>
-            <button onClick={handleLogout}>Logout</button>
+            <Header />
+            <div style={{ padding: '20px' }}>
+                <h1>Welcome to the Home Page</h1>
+            </div>
         </div>
     );
 }
