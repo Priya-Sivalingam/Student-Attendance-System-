@@ -1,12 +1,13 @@
-// src/pages/Home.js
+// client/src/pages/Home.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../services/authService';
 
 function Home() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem('token');
+        logout();
         navigate('/login');
     };
 
