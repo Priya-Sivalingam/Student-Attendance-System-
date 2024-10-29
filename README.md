@@ -2,6 +2,46 @@
 
 This is a simple attendance management system built with React for the frontend and Node.js for the backend. It allows users to log in and access a home page that greets them with their username.
 
+## Features
+- **User Authentication**: Basic login system with client-side validation.
+- **Session Management**: Stores session information in local storage for persistence.
+- **Navigation**: Uses React Router for seamless navigation between pages.
+- **Responsive UI**: Styled with a clean and simple user interface.
+
+---
+
+## Project Structure
+
+```plaintext
+MyApp/
+│
+├── public/                  # Public assets
+│   ├── index.html           # Main HTML file
+│   └── ...
+│
+├── server/                  # Server code (if applicable)
+│   ├── server.js            # Main server file
+│   ├── users.json            # Sample user data for authentication
+│   ├── .env                 # .env file
+│   ├── package.json         # Project metadata and dependencies
+├── src/                     # Source code for the app
+│   ├── pages/               # React pages
+│   │   ├── Login.js         # Login page component
+│   │   ├── Home.js          # Home page component
+    ├── components/          # React components
+│   │   ├── apiServices.js   # apiServices component
+│   │   ├── AuthContext.js   # AuthContext component
+│   │   ├── header.js        # header component
+│   ├── App.js               # Main App component
+│   ├── apiService.js        # Mock API service for login
+│   ├── index.js             # Application entry point
+│   └── ...
+│
+├── .gitignore               # Git ignore file
+├── package.json             # Project metadata and dependencies
+└── README.md                # Project documentation
+```
+
 ## Technologies Used
 
 - **Frontend:**
@@ -124,6 +164,28 @@ http://localhost:3000
           "message": "Invalid credentials"
       }
       ```
+---
+
+## Server-Side Details
+
+### Overview
+
+The server is implemented in Node.js and provides an API for user authentication.
+
+### Dependencies
+
+The server-side code uses the following dependencies:
+
+* **express**: Web framework for Node.js.
+* **body-parser**: Middleware for parsing incoming request bodies.
+* **cors**: Middleware to enable CORS.
+* **jsonwebtoken**: Library for creating and validating JWT tokens.
+* **dotenv**: For managing environment variables.
+
+### Environment Variables
+
+Create a `.env` file in the server directory with the following content:
+
 
 ## Testing Credentials
 
