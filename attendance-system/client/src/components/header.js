@@ -8,9 +8,10 @@ function Header() {
 
     const handleLogout = () => {
         localStorage.removeItem('token');  // Clear token from local storage
+        localStorage.removeItem('username');
         navigate('/');  // Redirect to the login page
     };
-
+    
     const handleMenuClick = () => {
         console.log("Menu button clicked");
     };
@@ -20,7 +21,7 @@ function Header() {
             <button onClick={handleMenuClick} style={styles.iconButton}>
                 <FontAwesomeIcon icon={faBars} />
             </button>
-            <h2 style={styles.logo}>MyApp</h2>
+            <h2 style={styles.logo}>Attendance System</h2>
             <button onClick={handleLogout} style={styles.iconButton}>
                 <FontAwesomeIcon icon={faSignOutAlt} />
             </button>
