@@ -1,32 +1,32 @@
-// src/pages/Login.js
+// client/src/pages/Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { login } from '../services/authService';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = async () => {
-        // Perform login logic (to be updated with real API call)
-        const response = await fetch('/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, password })
-        });
-        const data = await response.json();
-
-        if (response.ok) {
-            localStorage.setItem('token', data.token);
-            navigate('/home');
-        } else {
-            alert('Invalid credentials');
+        try {
+            const data = await login(username, password);
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+                navigate('/home');
+            } else {
+                setError('Invalid username or password');
+            }
+        } catch (err) {
+            setError('Error logging in');
         }
     };
 
     return (
         <div>
             <h2>Login</h2>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
             <input
                 type="text"
                 placeholder="Username"
