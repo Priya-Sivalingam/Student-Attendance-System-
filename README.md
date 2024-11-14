@@ -87,15 +87,7 @@ cd attendance-system
    npm install
    ```
 
-3. Create a `.env` file in the `server` directory with the following content:
-
-   ```env
-   PORT=5000
-   JWT_SECRET=mySuperSecretKey123!
-   ```
-
-
-4. Create a `users.json` file in the `server` directory with the following sample user data:
+3. Create a `users.json` file in the `server` directory with the following sample user data:
 
    ```json
    [
@@ -106,7 +98,7 @@ cd attendance-system
    ]
    ```
 
-5. Start the server:
+4. Start the server:
 
    ```bash
    npm index.js
