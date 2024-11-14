@@ -109,7 +109,7 @@ cd attendance-system
 5. Start the server:
 
    ```bash
-   npm start
+   npm index.js
    ```
 
 ### Client Setup
@@ -129,7 +129,7 @@ cd attendance-system
 3. Start the client application:
 
    ```bash
-   npm run dev
+   npm start
    ```
 
 ## Running the Project
